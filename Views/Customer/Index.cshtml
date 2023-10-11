@@ -1,0 +1,35 @@
+﻿@model List<MVCProject.Models.Customer>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3>Index</h3>
+
+Explain
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Birth Date</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ( var customer in Model){
+            <tr>
+            
+                <td>@customer.Name</td>
+                <td>@customer.Email</td>
+                <td>@customer.Birth.ToString("dd-mm-yy")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@customer.Id">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@customer.Id">Delete</a>
+
+                </td>
+
+            </tr>
+        }
+       
+    </tbody>
+</table>

@@ -1,0 +1,15 @@
+﻿@model MVCProject.Models.Customer
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3>Are you sure you want to delete</h3>
+
+@Model.Name
+@Model.Email
+@Model.Birth
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id"/>
+    <input type="submit" class="btn btn-danger" Value="Delete" />
+</form>
